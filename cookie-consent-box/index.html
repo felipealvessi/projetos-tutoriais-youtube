@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Cookie Consent Box</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <img src="./cookie.png" alt="Cookie Image" />
+
+      <div class="content">
+        <header>Cookies Consent</header>
+
+        <p>
+          This website use cookies to ensure you get the best experience on our
+          website.
+        </p>
+
+        <div class="buttons">
+          <button class="item">I understand</button>
+          <a href="#" class="item">Learn more</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const cookieBox = document.querySelector(".wrapper"),
+        acceptBtn = cookieBox.querySelector("button");
+
+      acceptBtn.onclick = () => {
+        //setting cookie for 1 month, after one month it'll be expired automatically
+        document.cookie = "CookieBy=RafaelSilva; max-age=" + 60 * 60 * 24 * 30;
+
+        if (document.cookie) {
+          //if cookie is set
+          cookieBox.classList.add("hide"); //hide cookie box
+        } else {
+          //if cookie not set then alert an error
+          alert(
+            "O cookie não pode ser definido! Desbloqueie este site da configuração de cookies do seu navegador."
+          );
+        }
+      };
+      let checkCookie = document.cookie.indexOf("CookieBy=RafaelSilva"); //checking our cookie
+      //if cookie is set then hide the cookie box else show it
+      checkCookie != -1
+        ? cookieBox.classList.add("hide")
+        : cookieBox.classList.remove("hide");
+    </script>
+  </body>
+</html>
