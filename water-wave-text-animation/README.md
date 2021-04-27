@@ -4,4 +4,4 @@ Efeito de animação em onda na palavra "Water", feito com o auxílio do tutoria
 
 ## 🖥 Layout
 
-![](/public/water-wave.gif)
+![](./public/water-wave.gif)
